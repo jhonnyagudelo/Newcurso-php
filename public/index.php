@@ -11,6 +11,9 @@
 			$dotenv = Dotenv\Dotenv::create(__DIR__ . '/..');
 			$dotenv->load();
 
+			echo getenv('DB_HOST');
+			die;
+
 			use Illuminate\Database\Capsule\Manager as Capsule;
 			use Aura\Router\RouterContainer;
 			use Zend\Diactoros\Response\HtmlResponse;
