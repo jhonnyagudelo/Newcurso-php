@@ -1,0 +1,18 @@
+{% extends "layout.twig" %}
+  {% block content %}
+    <h1>Add Project</h1>
+      <div class="alert alert-primary" role="alert" >
+        {{ responseMessage }}
+      </div>
+      <form action="/curso-php/project/add" method="post" >
+          <label for="title_project">Title:</label>
+          <input type="text" name="title_project" value=""><br>
+          <label for="description">Description:</label>
+          <input type="text" name="description" value=""><br>
+          <label for="technologies">technologies:</label>
+          <input type="text" name="technologies" value=""><br>
+          <label for="months">Months:</label>
+          <input type="number" name="months" value=""><br>
+          <input type="submit" name="" value="Save">
+      </form>
+{% endblock %}

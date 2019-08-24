@@ -1,0 +1,21 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<h1>Iniciar Sesion</h1>
+<div class="alert alert-primary" role="alert"></div>
+{{responseMessage}}
+
+<form action="" method="post">
+<label for="">Email
+    <input type="text" requerid name="email">
+</label>
+<label for="">password
+    <input type="password" requerid name="password"> 
+</label>
+<input type="submit" value="save">
+
+
+</form>
+
+{% endblock %}
