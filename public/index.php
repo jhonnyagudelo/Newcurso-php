@@ -51,7 +51,7 @@ $capsule = new Capsule;
 			$routerContainer = new RouterContainer();
 			$map = $routerContainer->getMap();
 
-			$map->get('index', '/curso-php/index', [
+			$map->get('index', '/curso-php/', [
 				'controller' => 'App\Controllers\IndexController',
 				'action' => 'indexAction',
 				'auth' => true
