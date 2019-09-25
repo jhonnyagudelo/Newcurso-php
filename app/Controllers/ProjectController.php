@@ -1,11 +1,20 @@
 <?php
 
 	namespace App\Controllers;
-	use App\Model\Project;
+	use App\Models\Project;
 	use Respect\Validation\Validator as v;
 
 	class ProjectController extends BaseController  {
-		public function getAddProjectAction($request) {
+
+		public function indexActionProject()
+		{
+			$projects = Project::all();
+			return $this->renderHTML('Projects/index.twig', compact('projects'));
+		}
+
+
+
+		public function getAddProjectAction(ServerRequest $request) {
 				$responseMessenge = null;
 				if ($request->getMethod() == 'POST') {
 					$postData = $request->getParsedBody();
@@ -18,10 +27,10 @@
 					$ProjectValidator->assert($postData);
 				    $postData = $request->getParsedBody();
 				    $job = new Project();
-				    $job->title_project = $_POST['title_project'];
-				    $job->description = $_POST['description'];
-				    $job->technologies = $_POST['technologies'];
-				    $job->months = $_POST['months'];
+				    $job->title_project = $postData['title_project'];
+				    $job->description = $postData['description'];
+				    $job->technologies = $postData['technologies'];
+				    $job->months = $postData['months'];
 				    $job->save();
 					$responseMessenge = 'Saved';
 				} catch (\Exception $e) {

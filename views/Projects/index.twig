@@ -1,0 +1,17 @@
+{% extends "layout.twig" %}
+{% block content %}
+    <div class="row">
+    <table class="table">
+        <tr>
+            <th>Project table</th>
+            <th>Delete</th>
+        </tr>
+        {% for project in projects %}
+            <tr>
+                <td>{{project.title_project}}</td>
+                <td><a href="/curso-php/delete?id={{projects.project_id}}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+{% endblock %}

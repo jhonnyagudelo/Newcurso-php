@@ -9,7 +9,10 @@ class AuthController extends BaseController
 {
 
     public function  getLogin(){
-        return $this->renderHTML('login.twig');
+        $responseMessage = $_SESSION['mensaje'] = null;
+         return $this->renderHTML('login.twig',[
+             'responseMessage' => $responseMessage
+         ]);
     }
 
 
